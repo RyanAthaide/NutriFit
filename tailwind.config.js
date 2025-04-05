@@ -1,11 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{html,js}'],
-    safelist: [
-      "bg-[url('/assets/fundo-login.jpg')]"
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  }
-  
+  content: [
+    './index.html',
+    './src/**/*.{html,js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
