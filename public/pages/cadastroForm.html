@@ -51,46 +51,46 @@
 
       <section
         id="content-primary"
-        class="w-full h-dvh bg-[url('../../public/assets/bgCadastro.jpg')] bg-cover bg-[76%] bg-no-repeat lg:bg-none flex flex-row justify-center py-10 items-center lg:flex-1/2"
+        class="w-full h-dvh bg-white flex flex-row justify-center py-10 items-center lg:flex-1/2"
       >
         <main
-          class="w-full h-dvh md:mt-0 flex flex-col px-9 md:px-0 lg:px-28 gap-6 md:gap-18 lg:gap-6 justify-center items-center"
+          class="w-full h-dvh md:mt-0 flex flex-col px-9 md:px-0 lg:px-28 gap-2 md:gap-18 lg:gap-8 justify-center items-center"
         >
           <div
             id="content-text"
             class="w-full md:w-[90%] lg:w-full lg:mt-8 flex justify-center items-center text-center flex-col gap-2 md:gap-6 lg:gap-2"
           >
             <h2
-              class="lg:w-[34vw] text-3xl md:text-7xl lg:text-4xl lg:text-center font-extrabold"
+              class="text-neutral-950 lg:w-[34vw] text-xl md:text-7xl lg:text-4xl lg:text-center font-extrabold"
             >
               Vamos nessa? Crie seu cadastro e entre para a plataforma.
             </h2>
             <p
-              class="md:w-1/2 lg:w-full text-neutral-500 text-xs md:text-lg lg:text-xs md:font-bold"
+              class=" hidden md:flex justify-center items-center md:w-1/2 lg:w-full text-neutral-500 text-xs md:text-lg lg:text-xs md:font-bold"
             >
               Um novo capítulo começa com um simples cadastro. Vamos lá?
             </p>
           </div>
           <form
-            class="w-full flex md:px-36 lg:px-2 flex-col justify-center items-center gap-4"
+            class="w-full flex md:px-36 lg:px-2 flex-col justify-center items-center gap-2"
           >
             <div
               id="btn-login"
-              class="w-full grid grid-cols-2 justify-center items-center gap-8"
+              class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-2 mb-6 md:gap-8"
             >
               <div class="w-full flex flex-col gap-1">
-                <label class="w-full flex text-start">Nome:</label>
+                <label class="w-full flex text-start text-sm font-medium mt-1">Nome:</label>
                 <input
-                  class="w-full p-2 outline-2 outline-neutral-900"
+                  class="w-full rounded-md p-2.5 outline-2 outline-neutral-800 placeholder:text-sm placeholder:text-neutral-500 transition-all duration-500 focus:outline-violet-700"
                   type="text"
                   name=""
                   id="campo-name"
                   placeholder="Digite seu nome"
                   required
                 />
-                <label class="w-full flex text-start">Sobrenome:</label>
+                <label class="w-full flex text-start text-sm font-medium mt-1">Sobrenome:</label>
                 <input
-                  class="w-full p-2 outline-2 outline-neutral-900"
+                  class="w-full rounded-md p-2.5 outline-2 outline-neutral-800 placeholder:text-sm placeholder:text-neutral-500 transition-all duration-500 focus:outline-violet-700"
                   type="text"
                   name=""
                   id="campo-surname"
@@ -100,18 +100,18 @@
               </div>
 
               <div class="w-full flex flex-col gap-1">
-                <label class="w-full flex text-start">Email:</label>
+                <label class="w-full flex text-start text-sm font-medium mt-1">Email:</label>
                 <input
-                  class="w-full p-2 outline-2 outline-neutral-900"
+                  class="w-full rounded-md p-2.5 outline-2 outline-neutral-800 placeholder:text-sm placeholder:text-neutral-500 transition-all duration-500 focus:outline-violet-700"
                   type="email"
                   name=""
                   id="campo-email"
                   placeholder="Digite seu e-mail"
                   required
                 />
-                <label class="w-full flex text-start">Senha:</label>
+                <label class="w-full flex text-start text-sm font-medium mt-1">Senha:</label>
                 <input
-                  class="w-full p-2 outline-2 outline-neutral-900"
+                  class="w-full rounded-md p-2.5 outline-2 outline-neutral-800 placeholder:text-sm placeholder:text-neutral-500 transition-all duration-500 focus:outline-violet-700"
                   type="password"
                   name=""
                   id="campo-password"
@@ -121,8 +121,8 @@
               </div>
             </div>
 
-            <div class="w-full flex justify-center itens-center">
-              <button class="px-2.5 py-2 bg-blue-800 text-white rounded-sm font-medium" type="submit">Cadastrar-se</button>
+            <div class="w-full flex justify-center itens-center mb-2">
+              <button class="w-[30vw] lg:w-[10vw] px-2.5 py-2 bg-blue-800 text-white rounded-sm font-medium" onclick="checkIn()" type="submit"><span class="hidden">Cadastrar-se</span><i class="fa-solid fa-spinner text-lg transition-all animate-spin ease-in-out"></i></button>
             </div>
 
             <div
@@ -130,7 +130,7 @@
               class="w-full flex flex-col justify-center items-center"
             >
               <span class="text-xs md:text-sm text-center text-neutral-500"
-                >Ao se inscrever, você aceita os Termos e a Política de
+                >Ao se Cadastrar, você aceita os Termos e a Política de
                 Privacidade, incluindo cookies.</span
               >
             </div>
