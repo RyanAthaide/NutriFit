@@ -35,18 +35,22 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 > Veja abaixo uma prévia da plataforma:
 
 <p align="center">
-  <img src="public/assets/prévia-readme.png" alt="Demonstração Nutri-Fut" width="100%"/>
+  <img src="public/assets/prévia-readme.png" alt="Demonstração Nutri-Fut" width="95%"/>
 </p>
 
 ---
 
 ## 🛠️ Tecnologias utilizadas
 
+- Visual Studio Code
 - HTML5
 - CSS3
+- Tailwind CSS
 - JavaScript Vanilla
 - Git & GitHub
-- (Planejamento visual com Figma)
+- Vite
+- FireBase
+- Figma
 
 ---
 
@@ -54,9 +58,9 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nutri-fut
+git clone https://github.com/RyanAthaide/NutriFit
 
 # Acesse a pasta
-cd nutri-fut
+cd NutriFit
 
 # Abra o index.html no navegador
