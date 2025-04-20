@@ -1,12 +1,11 @@
-import tailwindcss from 'tailwindcss';
-
 export default {
   content: [
-    './index.html',
-    './src/**/*.{html,js,jsx,ts,tsx}',
-    './src/scripts/main.js'
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/scripts/main.js"
   ],
-  plugins: [
-    tailwindcss
-  ]
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }

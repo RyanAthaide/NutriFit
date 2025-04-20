@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   base: './',
@@ -8,12 +8,9 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        require('@tailwindcss/postcss'),
+        require('tailwindcss'),
         require('autoprefixer')
       ]
     }
-  },
-  optimizeDeps: {
-    exclude: ['postcss', 'source-map-js', 'url']
   }
-});
+})
