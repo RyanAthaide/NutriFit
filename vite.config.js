@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
+// vite.config.js
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  css: {
-    postcss: './postcss.config.js',
-  },
-});
+  plugins: [tailwindcss()],
+})

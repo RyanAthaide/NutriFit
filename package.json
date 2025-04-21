@@ -1,20 +1,29 @@
 {
-  "name": "simuladordeinvestimentos",
+  "name": "nutrifit",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1 align=\"center\">🍏 Nutri-Fut</h1>",
+  "homepage": "https://github.com/RyanAthaide/SinVest_Investimentos#readme",
+  "bugs": {
+    "url": "https://github.com/RyanAthaide/SinVest_Investimentos/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanAthaide/SinVest_Investimentos.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "tailwindcss": "^4.1.4"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
-    "vite": "^4.5.13"
+    "@tailwindcss/vite": "^4.1.4"
   }
 }

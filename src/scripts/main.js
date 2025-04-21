@@ -1,6 +1,4 @@
 
-import '../styles/input.css';
-
 // Aguarde o DOM carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
     const btnInscricao = document.getElementById('inscricao');
