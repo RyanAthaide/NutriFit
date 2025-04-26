@@ -1,5 +1,5 @@
 
-// Redirecionamento e retorno para paginas de login e cadastro com b0tões 'entrar' e 'cadastre-se'
+// Redirecionamento e retorno para paginas de login com botão 'cadastre-se'.
 const btnCadastro = document.getElementById("btn-cadastro");
 
 btnCadastro.addEventListener('click', function() {
