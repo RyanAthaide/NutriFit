@@ -1,16 +1,8 @@
 
-// Aguarde o DOM carregar completamente
-document.addEventListener('DOMContentLoaded', () => {
-    const btnInscricao = document.getElementById('inscricao');
-
-    if (btnInscricao) {
-        btnInscricao.addEventListener('click', () => {
-            console.log('Redirecionando para página de inscrição...');
-            window.location.href = 'inscrever.html';
-        });
-    } else {
-        console.error('Botão com ID "inscricao" não encontrado!');
-    }
+// entrando na pagina increva-se com e-mail
+const inscrever = document.getElementById("inscricao");
+inscrever.addEventListener('click', function() {
+    window.location.href = "/pages/inscrever.html";
 });
 
 // Prevenção de recarregamento do form
