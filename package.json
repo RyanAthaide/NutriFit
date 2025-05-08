@@ -21,6 +21,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^11.7.0",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
