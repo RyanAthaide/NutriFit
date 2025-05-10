@@ -1,5 +1,8 @@
 // import para autenticacao via google
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import para autenticacao via github
+// import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
+
 import { auth } from "../../src/services/firebase.js";
 
 // função de click para autenticacao via google
@@ -13,11 +16,7 @@ document.getElementById("btn-loginGoogle").addEventListener("click", () => {
     .catch((error) => {
         console.log(error);
     })
-})
-
-
-
-
+});
 
 
 // Redirecionamento e retorno para paginas de login com botão 'cadastre-se'.
