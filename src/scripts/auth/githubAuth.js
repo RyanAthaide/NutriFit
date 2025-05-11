@@ -2,7 +2,7 @@
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
 
-export async function githubLogin(params) {
+export async function githubLogin() {
     const provider = new GithubAuthProvider();
 
     try {
@@ -10,7 +10,8 @@ export async function githubLogin(params) {
         console.log("Usuário logado: ", result.user);
         window.location.href = "./public/pages/dashboard.html";
     }  
+
     catch (error) {
-        console.error("Erro ao fazer login:", error.massage);
+        console.error("Erro ao fazer login:", error.message);
     }
 }

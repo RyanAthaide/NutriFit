@@ -1,22 +1,13 @@
-// import para autenticacao via google
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import para autenticacao via github
-// import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
-import { auth } from "../../src/services/firebase.js";
+import { googleLogin } from "./auth/googleAuth";
+import { githubLogin } from "./auth/githubAuth";
 
 // função de click para autenticacao via google
-document.getElementById("btn-loginGoogle").addEventListener("click", () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-    .then((result) => {
-        console.log(result);
-    })
+document.getElementById("btn-loginGoogle").addEventListener('click', googleLogin);
+// função de click para autenticacao via github
+document.getElementById("btn-LoginGithub").addEventListener('click', githubLogin);
 
-    .catch((error) => {
-        console.log(error);
-    })
-});
+
 
 
 // Redirecionamento e retorno para paginas de login com botão 'cadastre-se'.
