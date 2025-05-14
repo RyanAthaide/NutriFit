@@ -1,34 +1,47 @@
-
+// Importa as funções de login do Google e GitHub
 import { googleLogin } from "./auth/googleAuth";
 import { githubLogin } from "./auth/githubAuth";
 
-// função de click para autenticacao via google
-document.getElementById("btn-loginGoogle").addEventListener('click', googleLogin);
-// função de click para autenticacao via github
-document.getElementById("btn-LoginGithub").addEventListener('click', githubLogin);
+// Busca o botão de login com Google e github
+document.addEventListener('DOMContentLoaded', () => {
+
+    const loginButtons = [
+        { id: "btn-loginGoogle", action: googleLogin },
+        { id: "btn-loginGithub", action: githubLogin },
+    ];
+
+    loginButtons.forEach(({ id, action }) => {
+        const btnLogin = document.getElementById(id);
+        if (btnLogin) {
+            btnLogin.addEventListener('click', (e) => {
+                e.preventDefault();
+                action();    
+            })
+        }
+    });
+});
 
 
-
-
-// Redirecionamento e retorno para paginas de login com botão 'cadastre-se'.
+// Redirecionamento para página de cadastro (cadastre-se)
 const btnCadastro = document.getElementById("btn-cadastro");
+if (btnCadastro) {
+    btnCadastro.addEventListener('click', function () {
+        window.location.href = "/pages/cadastroForm.html";
+    });
+}
 
-btnCadastro.addEventListener('click', function() {
-    window.location.href = "/pages/cadastroForm.html";
-});
-
-
-// entrando na pagina increva-se com e-mail
+// Redirecionamento para página de inscrição com e-mail (botão de se inscrever que esta na pagina principal de login)
 const inscrever = document.getElementById("inscricao");
-inscrever.addEventListener('click', function() {
-    window.location.href = "/pages/inscrever.html";
-});
+if (inscrever) {
+    inscrever.addEventListener('click', function () {
+        window.location.href = "/pages/inscrever.html";
+    });
+}
 
-
-// Prevenção de recarregamento do form
+// Previne que o formulário seja enviado/recarregado ao clicar no botão
 const formButton = document.querySelector('form button[type="submit"]');
 if (formButton) {
-    formButton.addEventListener('click', function(e) {
+    formButton.addEventListener('click', function (e) {
         e.preventDefault();
     });
 }
