@@ -1,17 +1,32 @@
-// import para autenticacao via github
+// Importa a autenticação via GitHub
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
 
 export async function githubLogin() {
-    const provider = new GithubAuthProvider();
+  console.log("Tentando login com GitHub");
 
-    try {
-        const result = await signInWithPopup(auth, provider);
-        console.log("Usuário logado: ", result.user);
-        window.location.href = "./public/pages/dashboard.html";
-    }  
+  const provider = new GithubAuthProvider();
 
-    catch (error) {
-        console.error("Erro ao fazer login:", error.message);
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    if (user) {
+      console.log("Usuário logado:", user);
+      window.location.href = "./public/pages/dashboard.html";
     }
+  } catch (error) {
+    console.error("Erro ao fazer login:", error.code, error.message);
+
+    if (error.code === "auth/account-exists-with-different-credential") {
+      alert("Essa conta já está vinculada com outro provedor. Tente fazer login com o provedor original.");
+    }
+
+    if (error.code === "auth/popup-blocked") {
+      alert("Popup bloqueado pelo navegador. Tente permitir pop-ups para este site.");
+    }
+
+    // Outros erros
+    alert("Não foi possível realizar o login. Tente novamente.");
+  }
 }
