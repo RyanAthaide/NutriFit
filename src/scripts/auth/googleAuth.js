@@ -1,6 +1,7 @@
 // Importa a autenticação via Google
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
+import { saveUser } from "./saveUser.js";
 
 export async function googleLogin() {
   console.log("Tentando login com Google");
@@ -10,6 +11,7 @@ export async function googleLogin() {
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    saveUser(user);
 
     if (user) {
       console.log("Usuário logado:", user);
