@@ -1,6 +1,7 @@
 // Importa a autenticação via GitHub
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
+import { saveUser } from "./saveUser.js";
 
 export async function githubLogin() {
   console.log("Tentando login com GitHub");
@@ -10,6 +11,7 @@ export async function githubLogin() {
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    saveUser(user);
 
     if (user) {
       console.log("Usuário logado:", user);
