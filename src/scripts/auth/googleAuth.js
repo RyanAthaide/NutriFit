@@ -1,12 +1,16 @@
 // Importa a autenticação via Google
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
 import { saveUser } from "./saveUser.js";
 
-export async function googleLogin() {
-  console.log("Tentando login com Google");
+const authentication = getAuth();
+const provider = new GoogleAuthProvider();
 
-  const provider = new GoogleAuthProvider();
+provider.setCustomParameters({
+  prompt: "select_account",
+});
+
+export async function googleLogin() {
 
   try {
     const result = await signInWithPopup(auth, provider);
