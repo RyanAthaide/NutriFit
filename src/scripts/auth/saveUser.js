@@ -1,13 +1,37 @@
-export function saveUser(user) {
+// saveUser.js
+
+import { db } from "../../services/firebase.js";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+
+/**
+ * Salva os dados do usuário logado no Firestore.
+ * @param {Object} user - Objeto do usuário Firebase
+ */
+export async function saveUser(user) {
   if (!user) return;
 
-  const userData = {
-    displayName: user.displayName,
-    email: user.email,
-    photoURL: user.photoURL,
-    uid: user.uid,
-    providerId: user.providerId,
-  };
+  const userRef = doc(db, "users", user.uid);
+  const userSnap = await getDoc(userRef);
 
-  localStorage.setItem("userData", JSON.stringify(userData));
+  // Se o usuário ainda não existe, cria um novo documento
+  if (!userSnap.exists()) {
+    const { displayName, email, photoURL, providerId, uid } = user;
+
+    try {
+      await setDoc(userRef, {
+        uid,
+        displayName,
+        email,
+        photoURL,
+        providerId,
+        createdAt: new Date().toISOString()
+      });
+
+      console.log("Usuário salvo no Firestore!");
+    } catch (error) {
+      console.error("Erro ao salvar usuário no Firestore:", error);
+    }
+  } else {
+    console.log("Usuário já existe no Firestore.");
+  }
 }

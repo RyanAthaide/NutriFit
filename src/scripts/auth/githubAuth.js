@@ -1,34 +1,46 @@
 // Importa a autenticação via GitHub
-import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  signInWithPopup,
+  fetchSignInMethodsForEmail,
+  signInWithCredential,
+  linkWithCredential
+} from "firebase/auth";
 import { auth } from "../../services/firebase.js";
 import { saveUser } from "./saveUser.js";
 
+const provider = new GithubAuthProvider();
+
+provider.setCustomParameters({
+  prompt: "select_account"
+});
+
 export async function githubLogin() {
-  console.log("Tentando login com GitHub");
-
-  const provider = new GithubAuthProvider();
-
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
-    saveUser(user);
 
     if (user) {
-      console.log("Usuário logado:", user);
-      window.location.href = "./public/pages/dashboard.html";
+     await saveUser(user); // ⚠️ aguarde salvar antes de redirecionar!
+    window.location.href = "/public/pages/dashboard.html";
     }
   } catch (error) {
-    console.error("Erro ao fazer login:", error.code, error.message);
-
     if (error.code === "auth/account-exists-with-different-credential") {
-      alert("Essa conta já está vinculada com outro provedor. Tente fazer login com o provedor original.");
-    }
+      const pendingCred = GithubAuthProvider.credentialFromError(error);
+      const email = error.customData.email;
 
-    if (error.code === "auth/popup-blocked") {
-      alert("Popup bloqueado pelo navegador. Tente permitir pop-ups para este site.");
-    }
+      // Descobre com qual provedor o email está registrado
+      const methods = await fetchSignInMethodsForEmail(auth, email);
+      if (methods.includes("google.com")) {
+        alert("Este e-mail já foi usado com o Google. Faça login com o Google para vincular sua conta.");
 
-    // Outros erros
-    alert("Não foi possível realizar o login. Tente novamente.");
+        // Você pode forçar login com Google aqui e depois linkar:
+        // (exemplo: signInWithPopup(googleProvider) e depois linkWithCredential)
+      } else {
+        alert("Este e-mail já foi usado com outro provedor.");
+      }
+    } else {
+      console.error("Erro ao fazer login com GitHub:", error);
+    }
   }
 }

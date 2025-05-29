@@ -1,9 +1,8 @@
 // Importa a autenticação via Google
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../services/firebase.js";
 import { saveUser } from "./saveUser.js";
 
-const authentication = getAuth();
 const provider = new GoogleAuthProvider();
 
 provider.setCustomParameters({
@@ -12,14 +11,16 @@ provider.setCustomParameters({
 
 export async function googleLogin() {
 
+  // console.log("Usuário atual antes de logar:", auth.currentUser);
+
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
-    saveUser(user);
 
     if (user) {
+      await saveUser(user); // ⚠️ aguarde salvar antes de redirecionar!
       console.log("Usuário logado:", user);
-      window.location.href = "./public/pages/dashboard.html";
+      window.location.href = "/public/pages/dashboard.html";
     }
   } catch (error) {
     console.error("Erro ao fazer login:", error.code, error.message);

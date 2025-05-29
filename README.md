@@ -46,7 +46,7 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 - HTML5
 - CSS3
 - Tailwind CSS
-- JavaScript Vanilla
+- JavaScript
 - Git & GitHub
 - Vite
 - FireBase
