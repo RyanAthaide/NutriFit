@@ -32,10 +32,18 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 
 ## 📸 Prévia
 
-> Veja abaixo uma prévia da plataforma:
+> Veja abaixo uma prévia da plataforma: Desktop 💻
 
 <p align="center">
-  <img src="public/assets/prévia-readme.png" alt="Demonstração Nutri-Fut" width="95%"/>
+  <img src="public/assets/previa-readme.png" alt="Demonstração Nutri-Fut" width="95%"/>
+</p>
+
+---
+
+> Veja abaixo uma prévia da plataforma: Mobile 📲
+
+<p align="center">
+  <img src="public/assets/previa-mobile.png" alt="Demonstração Nutri-Fut" width="95%"/>
 </p>
 
 ---
@@ -49,7 +57,8 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 - JavaScript
 - Git & GitHub
 - Vite
-- FireBase
+- Firebase
+- Firestore
 - Figma
 
 ---
