@@ -31,3 +31,23 @@ ul.custom-list li a {
   color: #333;
   text-decoration: none;
 }
+
+/* input apparence */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+/* *** Cores no resultado do imc sendo green para 'positivo' e red para 'negativo' */
+.normal{
+    color: #16a34a;
+}
+
+.attention {
+    color: #dc2626;
+}
