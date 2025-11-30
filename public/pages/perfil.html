@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriFit - Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="/src/styles.css" rel="stylesheet" />
+  </head>
+  <body class="m-0 p-0 box-border ">
+    <section class="h-dvh flex flex-row w-full">
+      <aside class="flex flex-col h-full w-60 bg-white">
+
+        <section id="aside-title" class="h-14 flex flex-col justify-center items-center px-8 py-2.5 border-b-2 border-b-neutral-300">
+           <h1
+          id="logo"
+          class="text-2xl bg-clip-text bg-gradient-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+        >
+          NutriFit <span><i class="fa-solid fa-heart text-xl md:text-2xl lg:text-xl"></i></span>
+        </h1>
+        <h2 class=" bg-clip-text bg-gradient-to-r from-violet-700 to-gray-400 text-transparent text-sm font-medium">Plataforma</h2>
+        </section>
+
+        <section id="aside-menu" class="flex-1 overflow-y-auto">
+          <ul class="custom-list lista-com-hover list-none">
+
+            <li>
+              <i class="fa-solid fa-home text-violet-700"></i>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-user text-violet-700"></i>
+              <a href="">Perfil</a>
+            </li>
+            <li>
+               <i class="fa-solid fa-utensils text-violet-700"></i>
+              <a href="#">Dicas Nutricionais</a>
+            </li> <!-- Em desenvolvimento-->
+            <li>
+              <i class="fa-solid fa-calculator text-violet-700"></i>
+              <a href="imc.html">Calculadora IMC</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-gamepad text-violet-700"></i>
+              <a href="#">Lembrei do Prato!</a>
+            </li>
+          </ul>
+        </section>
+
+          <!-- Suporte (fixo no rodapé) -->
+   <section>
+    <ul class="list-none">
+      <li class="w-full cursor-pointer py-3 px-4 flex gap-2 flex-row items-center bg-neutral-800 duration-300 transition-all hover:bg-[#6e8efb]">
+        <i class="fa-solid fa-circle-question text-xl text-violet-700"></i>
+        <a class="text-white font-medium" href="#">Suporte NutriFit</a>
+      </li>
+    </ul>
+  </section>
+      </aside>
+
+      <main class="block h-full w-[calc(100%-15rem)] bg-neutral-50">
+        <header class="w-full flex flex-row items-center justify-between h-14 bg-white px-8 border-b-2 border-b-neutral-300 border-l-2 border-l-neutral-300">
+
+          <section class="flex items-center justify-center gap-1">
+            <a class=" flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600" href="#"><i class="fa-solid fa-user text-[16px] text-violet-700"></i> Perfil</a>
+          </section>
+
+          <section class="flex items-center justify-center gap-4 ">
+            <a class=" flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600 bg-violet-300 py-2 px-4 rounded-md" href="#"><i class="fa-solid fa-user text-[16px] text-violet-700"></i><span id="perfilNome"></span></a>
+
+            <a id="btn-sair" class=" flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600" href="#"><i class="fa-solid fa-right-from-bracket text-[16px] text-violet-700"></i>Sair</a>
+          </section>
+        </header>
+
+        
+
+        <!-- ***Customizar Scroll***-->
+
+        <section id="main-content" class="w-full h-[calc(100%-3.5rem)] overflow-y-auto p-8">
+          <section id="painel-main" class="flex flex-row items-center justify-between">
+         
+          </section>
+        </section>
+      </main>
+    </section>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/pages/dashboard.js"></script>
+  </body>
+</html>
