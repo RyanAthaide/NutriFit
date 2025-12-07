@@ -28,7 +28,7 @@
       >
         <h1
           id="logo"
-          class="text-3xl md:text-5xl lg:text-3xl bg-clip-text bg-gradient-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+          class="text-3xl md:text-5xl lg:text-3xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
         >
           NutriFit <span><i class="fa-solid fa-heart text-2xl md:text-4xl lg:text-2xl"></i></span>
         </h1>
@@ -73,13 +73,11 @@
               Um novo capítulo começa com um simples cadastro. Vamos lá?
             </p>
           </div>
+
           <form id="form-cadastro"
-            class="w-full flex md:px-20 lg:px-2 flex-col justify-center items-center gap-2"
+            class="w-full flex md:px-20 lg:px-2 flex-col justify-center items-center gap-4"
           >
-            <div
-              id="btn-login"
-              class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-2 mb-6 md:gap-8"
-            >
+           
               <div class="w-full flex flex-col gap-1">
                 <label class="w-full flex text-start text-sm md:text-lg lg:text-sm font-medium mt-1">Nome:</label>
                 <input
@@ -99,9 +97,6 @@
                   placeholder="Digite seu sobrenome:"
                   required
                 />
-              </div>
-
-              <div class="w-full flex flex-col gap-1">
                 <label class="w-full flex text-start text-sm md:text-lg lg:text-sm font-medium mt-1">Email:</label>
                 <input
                   class="w-full rounded-md p-2.5 md:p-3.5 lg:p-2.5 outline-2 outline-neutral-800 shadow-md shadow-neutral-500 placeholder:text-sm placeholder:text-neutral-500 transition-all duration-500 focus:outline-violet-700"
@@ -121,26 +116,24 @@
                   required
                 />
               </div>
-            </div>
 
-            <div class="w-full flex justify-center itens-center mb-2 md:mt-6">
-              <button class="w-full md:w-[24vw] lg:w-[10vw] px-1.5 py-2 md:py-3 lg:py-2 bg-blue-800 text-white md:text-lg rounded-sm font-medium cursor-pointer transition-all duration-100 active:shadow-lg shadow-neutral-800" type="submit">Cadastrar-se</button>
-            </div>
+              <button type="submit" id="btn-cadastrarse" class="w-full mt-6 md:w-[24vw] lg:w-[10vw] px-1.5 py-2 md:py-3 lg:py-2 bg-blue-600 text-white md:text-lg rounded-sm font-medium cursor-pointer transition-all duration-100 active:shadow-lg shadow-neutral-800" >Cadastrar-se</button>
+        
+          </form>
 
-            <div
+           <div
               id="terms"
-              class="w-full flex flex-col justify-center items-center md:mt-4"
+              class="w-full flex flex-col justify-center items-center"
             >
               <span class="text-xs md:text-sm text-center text-neutral-500"
                 >Ao se Cadastrar, você aceita os Termos e a Política de
                 Privacidade, incluindo cookies.</span
               >
             </div>
-          </form>
         </main>
         <aside
           id="container-img"
-          class="hidden lg:flex w-full h-screen bg-[url('../../public/assets/bgCadastro.jpg')] bg-cover bg-[86%] bg-no-repeat"
+          class="hidden lg:flex w-full h-screen bg-[url('../../public/assets/bgCadastro.jpg')] bg-cover bg-position-[86%] bg-no-repeat"
         ></aside>
       </section>
     </section>

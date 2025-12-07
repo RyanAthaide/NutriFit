@@ -38,10 +38,3 @@ if (inscrever) {
     });
 }
 
-// Previne que o formulário seja enviado/recarregado ao clicar no botão
-const formButton = document.querySelector('form button[type="submit"]');
-if (formButton) {
-    formButton.addEventListener('click', function (e) {
-        e.preventDefault();
-    });
-}

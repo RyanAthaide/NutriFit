@@ -22,16 +22,16 @@
   </head>
   <body class="m-0 p-0 box-border ">
     <section class="h-dvh flex flex-row w-full">
-      <aside class="flex flex-col h-full w-60 bg-white">
+      <aside class="hidden md:flex flex-col h-full w-60 bg-white">
 
         <section id="aside-title" class="h-14 flex flex-col justify-center items-center px-8 py-2.5 border-b-2 border-b-neutral-300">
            <h1
           id="logo"
-          class="text-2xl bg-clip-text bg-gradient-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+          class="text-2xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
         >
           NutriFit <span><i class="fa-solid fa-heart text-xl md:text-2xl lg:text-xl"></i></span>
         </h1>
-        <h2 class=" bg-clip-text bg-gradient-to-r from-violet-700 to-gray-400 text-transparent text-sm font-medium">Plataforma</h2>
+        <h2 class=" bg-clip-text bg-linear-to-r from-violet-700 to-gray-400 text-transparent text-sm font-medium">Plataforma</h2>
         </section>
 
         <section id="aside-menu" class="flex-1 overflow-y-auto">
@@ -71,7 +71,37 @@
   </section>
       </aside>
 
-      <main class="block h-full w-[calc(100%-15rem)] bg-neutral-50">
+<nav class="fixed bottom-0 left-0 w-full bg-white shadow-xl border-t border-gray-200
+            flex justify-around py-2 sm:flex md:hidden lg:hidden z-50">
+
+  <a href="dashboard.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-home text-xl"></i>
+    <span class="text-xs font-medium">Home</span>
+  </a>
+
+  <a href="perfil.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-user text-xl"></i>
+    <span class="text-xs font-medium">Perfil</span>
+  </a>
+
+  <a href="dicasNutri.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-utensils text-xl"></i>
+    <span class="text-xs font-medium">Dicas</span>
+  </a>
+
+  <a href="imc.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-calculator text-xl"></i>
+    <span class="text-xs font-medium">IMC</span>
+  </a>
+
+  <a href="lembreiDoPrato.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-gamepad text-xl"></i>
+    <span class="text-xs font-medium">Prato</span>
+  </a>
+
+</nav>
+
+      <main class="block h-full w-full md:w-[calc(100%-15rem)] bg-neutral-50">
         <header class="w-full flex flex-row items-center justify-between h-14 bg-white px-8 border-b-2 border-b-neutral-300 border-l-2 border-l-neutral-300">
 
           <section class="flex items-center justify-center gap-1">
@@ -152,6 +182,14 @@
 
           </section>
       </main>
+
+       <footer class="hidden md:block absolute bottom-0 w-full py-4 bg-zinc-600">
+        <div class="flex items-center justify-center">
+          <p class="text-sm font-medium text-gray-300">
+        © 2025 Ryan Athaide • NutriFit 💜
+      </p>
+        </div>
+      </footer>
     </section>
 
     <script type="module" src="/src/scripts/main.js"></script>
