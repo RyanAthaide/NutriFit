@@ -11,22 +11,32 @@
 </div>
 
 ---
+# 🧠 Sobre o Projeto
 
-## 🚀 Sobre o Projeto
+O **NutriFit** é uma plataforma web que visa auxiliar usuários — desde crianças até adultos — na construção de uma rotina de saúde mais equilibrada.
 
-O **Nutri-Fut** é uma plataforma focada em promover o bem-estar de pessoas que buscam melhorar sua saúde física e mental através do **autocuidado**, **controle de peso** e **alimentação saudável**.
+O sistema oferece:
 
-A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo de desenvolver algo útil, bonito e funcional para o dia a dia das pessoas.
+- Controle alimentar através de seleção por imagens
+- Monitoramento de humor após refeições
+- Dicas nutritivas filtráveis
+- Cálculo de IMC
+- Perfil do usuário conectado via Firebase Authentication
+- Interface moderna, leve e responsiva
+
+O projeto foi desenvolvido como **projeto de extensão acadêmica**, com foco em ferramentas digitais voltadas para educação alimentar.
 
 ---
 
-## 🧠 Funcionalidades (em desenvolvimento)
+# ⭐ Funcionalidades Principais
 
-- [x] Tela inicial com visual moderno
-- [x] Cadastro de usuário
-- [ ] Controle de peso e IMC
-- [ ] Sugestões personalizadas de alimentação
-- [ ] Área de dicas e receitas saudáveis
+- ✔ Dashboard moderno e responsivo  
+- ✔ Perfil do usuário com foto (Google OAuth)  
+- ✔ Consulta de dicas nutricionais com filtros  
+- ✔ Calculadora IMC integrada  
+- ✔ Jogo educativo **“Lembrei do Prato”**  
+- ✔ Layout responsivo (mobile, tablet, desktop)  
+- ✔ Autenticação via Firebase (Email/Senha & Google)  
 
 ---
 
@@ -48,22 +58,102 @@ A ideia surgiu como parte de um projeto de extensão acadêmico, com o objetivo 
 
 ---
 
-## 🛠️ Tecnologias utilizadas
-
-- Visual Studio Code
-- HTML5
-- CSS3
-- Tailwind CSS
-- JavaScript
-- Git & GitHub
-- Vite
-- Firebase
-- Firestore
-- Figma
+# 🖼 Demonstrações (com prints)
 
 ---
 
-## 📂 Como rodar o projeto
+## 🧭 Dashboard
+Tela principal do usuário com atalhos para todas as funções.
+
+<!-- IMAGEM AQUI — Dashboard -->
+> Veja abaixo a section - **Dashboard**:
+
+<p align="center">
+  <img src="public/assets/dashboard.png" alt="Demonstração Dashboard" width="95%"/>
+</p>
+
+---
+
+## 👤 Perfil do Usuário
+Exibe foto, nome e e-mail do usuário autenticado.
+
+<!-- IMAGEM AQUI — Perfil -->
+> Veja abaixo a section - **Perfil do Usuário**:
+
+<p align="center">
+  <img src="public/assets/perfil.png" alt="Demonstração Perfil do Usuário" width="95%"/>
+</p>
+
+---
+
+## 🥑 Dicas Nutritivas
+Lista filtrável com sugestões de alimentação saudável.
+
+<!-- IMAGEM AQUI — Dicas Nutritivas -->
+> Veja abaixo a section - **Dicas Nutritivas**:
+
+<p align="center">
+  <img src="public/assets/dicas-nutritivas.png" alt="Demonstração Dicas Nutritivas" width="95%"/>
+</p>
+
+---
+
+## ⚖️ Calculadora IMC
+Calcula o Índice de Massa Corporal e gera feedback imediato.
+
+<!-- IMAGEM AQUI — IMC -->
+> Veja abaixo a section - **Calculadora IMC**:
+
+<p align="center">
+  <img src="public/assets/imc.png" alt="Demonstração Calculadora IMC" width="95%"/>
+</p>
+
+---
+
+## 🎮 Jogo “Lembrei do Prato”
+A criança seleciona o alimento pela imagem e registra como se sentiu.
+
+<!-- IMAGEM AQUI — Jogo -->
+> Veja abaixo a section - **Lembrei do Prato**:
+
+<p align="center">
+  <img src="public/assets/lembrei-do-prato.png" alt="Demonstração Lembrei do Prato" width="95%"/>
+  <img src="public/assets/lembrei-do-prato2.png" alt="Demonstração Lembrei do Prato" width="95%"/>
+</p>
+
+---
+
+
+# 🛠 Tecnologias Utilizadas
+
+| Tecnologia              | Uso                               |
+|------------------------|------------------------------------|
+| **HTML5**              | Estrutura das páginas              |
+| **CSS3 + TailwindCSS** | Estilização rápida e responsiva    |
+| **JavaScript (ES6)**   | Lógica do front-end                |
+| **Firebase Authentication** | Login e dados do usuário     |
+| **Firebase Firestore** | Armazenamento                      |
+| **Vite**               | Ambiente de desenvolvimento rápido |
+| **Git & GitHub**       | Versionamento                      |
+
+---
+
+# 👨‍💻 Autor
+
+<p align="center">
+  <img src="public/assets/MyPerson.jpg" width="130" style="border-radius: 50%;" alt="Foto do autor"/>
+</p>
+
+<p align="center">
+  <strong>Ryan Athaide da Silva</strong><br/>
+  Estudante de Bacharelado em Engenharia de Software.<br/>
+  Apaixonado por desenvolvimento web, IA e automação.
+</p>
+
+---
+
+
+# 🚀 Como Executar o Projeto
 
 ```bash
 # Clone o repositório
@@ -72,4 +162,8 @@ git clone https://github.com/RyanAthaide/NutriFit
 # Acesse a pasta
 cd NutriFit
 
-# Abra o index.html no navegador
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
