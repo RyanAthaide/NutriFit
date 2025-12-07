@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriFit - Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="/src/styles.css" rel="stylesheet" />
+  </head>
+  <body class="m-0 p-0 box-border">
+    <section class="h-dvh flex flex-row w-full">
+      <aside class="hidden md:flex flex-col h-full w-60 bg-white">
+        <section
+          id="aside-title"
+          class="h-14 flex flex-col justify-center items-center px-8 py-2.5 border-b-2 border-b-neutral-300"
+        >
+          <h1
+            id="logo"
+            class="text-xl md:text-2xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+          >
+            NutriFit
+            <span
+              ><i class="fa-solid fa-heart text-xl md:text-2xl lg:text-xl"></i
+            ></span>
+          </h1>
+          <h2
+            class="bg-clip-text bg-linear-to-r from-violet-700 to-gray-400 text-transparent text-sm font-medium"
+          >
+            Plataforma
+          </h2>
+        </section>
+
+        <section id="aside-menu" class="flex-1 overflow-y-auto">
+          <ul class="custom-list lista-com-hover list-none">
+            <li>
+              <i class="fa-solid fa-home text-violet-700"></i>
+              <a href="#">Dashboard</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-user text-violet-700"></i>
+              <a href="perfil.html">Perfil</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-utensils text-violet-700"></i>
+              <a href="dicasNutri.html">Dicas Nutricionais</a>
+            </li>
+            <!-- Em desenvolvimento-->
+            <li>
+              <i class="fa-solid fa-calculator text-violet-700"></i>
+              <a href="imc.html">Calculadora IMC</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-gamepad text-violet-700"></i>
+              <a href="lembreiDoPrato.html">Lembrei do Prato!</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Suporte (fixo no rodapé) -->
+      </aside>
+
+      <!-- MENU MOBILE - aparece apenas em telas SM -->
+<nav class="fixed bottom-0 left-0 w-full bg-white shadow-xl border-t border-gray-200
+            flex justify-around py-2 sm:flex md:hidden lg:hidden z-50">
+
+  <a href="dashboard.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-home text-xl"></i>
+    <span class="text-xs font-medium">Home</span>
+  </a>
+
+  <a href="perfil.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-user text-xl"></i>
+    <span class="text-xs font-medium">Perfil</span>
+  </a>
+
+  <a href="dicasNutri.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-utensils text-xl"></i>
+    <span class="text-xs font-medium">Dicas</span>
+  </a>
+
+  <a href="imc.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-calculator text-xl"></i>
+    <span class="text-xs font-medium">IMC</span>
+  </a>
+
+  <a href="lembreiDoPrato.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-gamepad text-xl"></i>
+    <span class="text-xs font-medium">Prato</span>
+  </a>
+
+</nav>
+
+
+      <main class="block h-full w-full md:w-[calc(100%-15rem)] bg-neutral-50">
+        <header
+          class="w-full flex flex-row items-center justify-between h-14 bg-white px-8 border-b-2 border-b-neutral-300 border-l-2 border-l-neutral-300"
+        >
+          <section class="flex items-center justify-center gap-1">
+            <a
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600"
+              href="#"
+              ><i class="fa-solid fa-home text-[16px] text-violet-700"></i>
+              Dashboard</a
+            >
+          </section>
+
+          <section class="flex items-center justify-center gap-4">
+            <a
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600 bg-violet-300 py-2 px-4 rounded-md"
+              href="#"
+              ><i class="fa-solid fa-user text-[16px] text-violet-700"></i
+              ><span id="perfilNome"></span
+            ></a>
+
+            <a
+              id="btn-sair"
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600"
+              href="#"
+              ><i
+                class="fa-solid fa-right-from-bracket text-[16px] text-violet-700"
+              ></i
+              >Sair</a
+            >
+          </section>
+        </header>
+
+        <!-- ***Customizar Scroll***-->
+
+        <section
+          id="main-content"
+          class="w-full h-[calc(100%-3.5rem)] overflow-y-auto p-8"
+        >
+          <section
+            id="painel-main"
+            class="flex flex-row items-center justify-between"
+          >
+            <div class="w-full h-full p-8">
+              <h1 class="text-3xl lg:text-4xl font-bold text-violet-700 mb-6">
+                Bem-vindo ao <span class="font-extrabold bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent">NutriFit!</span> 💜
+              </h1>
+
+              <!-- GRID DOS CARDS -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- CARD 1 - Registrar Meu Prato -->
+                <div
+                  onclick="goTo('lembreiDoPrato.html')"
+                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                >
+                  <div class="text-4xl mb-3">🍽️</div>
+
+                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                    Registrar Meu Prato
+                  </h2>
+
+                  <p class="text-gray-500 text-sm">
+                    Selecione os alimentos consumidos e registre como se sentiu
+                    após a refeição.
+                  </p>
+                </div>
+
+                <!-- CARD 2 - Dicas Nutritivas -->
+                <div
+                  onclick="goTo('dicasNutri.html')"
+                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                >
+                  <div class="text-4xl mb-3">🍎</div>
+
+                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                    Dicas Nutricionais
+                  </h2>
+
+                  <p class="text-gray-500 text-sm">
+                    Aprenda hábitos saudáveis, sugestões de refeições e boas
+                    práticas para o dia a dia.
+                  </p>
+                </div>
+
+                <!-- CARD 3 - Meu Perfil -->
+                <div
+                  onclick="goTo('perfil.html')"
+                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                >
+                  <div class="text-4xl mb-3">👤</div>
+
+                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                    Meu Perfil
+                  </h2>
+
+                  <p class="text-gray-500 text-sm">
+                    Consulte seus dados, idade, peso, altura e informações
+                    cadastradas.
+                  </p>
+                </div>
+
+                <!-- CARD 4 - Calculadora IMC -->
+                <div
+                  onclick="goTo('imc.html')"
+                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                >
+                  <div class="text-4xl mb-3">⚖️</div>
+
+                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
+                    Calculadora IMC
+                  </h2>
+
+                  <p class="text-gray-500 text-sm">
+                    Descubra sua classificação corporal e receba orientações
+                    personalizadas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+      <footer class="hidden md:block absolute bottom-0 w-full py-4 bg-zinc-600">
+        <div class="flex items-center justify-center">
+          <p class="text-sm font-medium text-gray-300">
+        © 2025 Ryan Athaide • NutriFit 💜
+      </p>
+        </div>
+      </footer>
+    </section>
+
+
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/pages/cadastro.js"></script>
+    <script type="module" src="/src/scripts/pages/dashboard.js"></script>
+  </body>
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</html>

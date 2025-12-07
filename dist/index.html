@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriFit - login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+
+    <script type="module" crossorigin src="/assets/index-wskiRAo-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-mbLsX59J.css">
+  </head>
+  <body class="m-0 p-0 box-border">
+    <section class="w-full h-dvh">
+      <header
+        class="w-full py-3 px-8 lg:px-10 flex fixed z-50 bg-white justify-between items-center border-b border-b-neutral-400"
+      >
+        <h1
+          id="logo"
+          class="text-3xl bg-clip-text bg-gradient-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+        >
+          NutriFit <span><i class="fa-solid fa-heart text-2xl"></i></span>
+        </h1>
+
+        <nav class="flex gap-4 justify-center items-center">
+          <div class="justify-center items-center gap-0.5 hidden lg:flex">
+            <p class="">
+              Português (Brazil)
+              <span><i class="bx bxs-chevron-down"></i></span>
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            id="btn-cadastro"
+            class="py-1 px-3 cursor-pointer shadow-sm shadow-violet-700 text-neutral-950 outline-2 rounded-md outline-violet-700 font-medium hover:text-white hover:bg-violet-700 transition-all duration-500"
+          >
+            Cadastre-se
+          </button>
+        </nav>
+      </header>
+
+      <section
+        id="content-primary"
+        class="w-full h-dvh bg-[url('../../public/assets/bgMobile.jpg')] bg-cover bg-[40%] bg-no-repeat lg:bg-none flex flex-row-reverse justify-center py-10 items-center lg:flex-1/2"
+      >
+        <main
+          class="w-full h-dvh md:mt-0 flex flex-col px-9 md:px-0 lg:px-30 gap-6 md:gap-18 lg:gap-6 justify-center items-center"
+        >
+          <div
+            id="content-text"
+            class="w-full md:w-[90%] lg:w-full lg:mt-8 flex justify-center items-center text-center flex-col gap-2 md:gap-6 lg:gap-2"
+          >
+            <h2
+              class="lg:w-[34vw] text-3xl md:text-5xl lg:text-6xl lg:text-center font-bold mb-2"
+            >
+              Cadastre-se e Veja a Melhor Versão de Você Mesmo!
+            </h2>
+            <p
+              class="md:w-1/2 lg:w-full text-neutral-500 text-xs md:text-lg lg:text-xs md:font-bold"
+            >
+              Dê o primeiro passo para sua melhor versão. Cadastre-se e
+              acompanhe sua evolução!
+            </p>
+          </div>
+          <form
+            class="w-full flex md:px-36 lg:px-10 flex-col justify-center items-center gap-4"
+          >
+            <div
+              id="btn-login"
+              class="w-full flex flex-col justify-center items-center gap-4"
+            >
+              <button
+                type="submit"
+                id="btn-loginGoogle"
+                class="p-1.5 md:p-2.5 lg:p-1.5 cursor-pointer rounded-4xl w-full outline-2 outline-neutral-950 flex items-center justify-center gap-2 bg-white transition-all duration-500 hover:outline-2 hover:outline-violet-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#fbc02d"
+                    d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                  <path
+                    fill="#e53935"
+                    d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+                  ></path>
+                  <path
+                    fill="#4caf50"
+                    d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+                  ></path>
+                  <path
+                    fill="#1565c0"
+                    d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                </svg>
+                <span class="font-medium">Continue com Google</span>
+              </button>
+
+              <button
+                type="submit"
+                id="btn-loginGithub"
+                class="p-1.5 md:p-2.5 lg:p-1.5 cursor-pointer rounded-4xl w-full outline-2 outline-neutral-950 flex items-center justify-center gap-2 bg-white transition-all duration-500 hover:outline-2 hover:outline-violet-700"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:msFilter;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg>
+
+                <span class="font-medium">Continue com GitHub</span>
+              </button>
+            </div>
+            <div
+              id="btn-subscribe"
+              class="w-full flex flex-col justify-center items-center"
+            >
+              <button id="inscricao"
+                type="button"
+                class="w-full p-2.5 cursor-pointer rounded-4xl bg-neutral-950 text-white font-medium flex items-center justify-center gap-2 shadow-sm shadow-neutral-900 hover:bg-neutral-900 transition-all duration-500"
+              >
+                Increva-se com e-mail
+              </button>
+            </div>
+            <div id="criar-conta">
+              <a
+                href="/pages/cadastroForm.html"
+                class="font-medium text-lg text-center text-blue-800 duration-300 transition-all hover:underline"
+              >
+                Criar uma conta
+              </a>
+            </div>
+            <div
+              id="terms"
+              class="w-full flex flex-col justify-center items-center"
+            >
+              <span class="text-xs font-bold md:text-sm lg:font-normal text-center text-neutral-50 lg:text-neutral-500"
+                >Ao se inscrever, você aceita os Termos e a Política de
+                Privacidade, incluindo cookies.</span
+              >
+            </div>
+          </form>
+        </main>
+        <aside
+          id="container-img"
+          class="hidden lg:flex w-full h-screen lg:bg-[url('../../public/assets/bgLogin.jpg')] lg:bg-cover lg:bg-[96%] lg:bg-no-repeat"
+        ></aside>
+      </section>
+    </section>
+
+  </body>
+</html>

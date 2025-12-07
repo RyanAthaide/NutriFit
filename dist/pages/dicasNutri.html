@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriFit - Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="/src/styles.css" rel="stylesheet" />
+  </head>
+  <body class="m-0 p-0 box-border">
+    <section class="h-dvh flex flex-row w-full">
+      <aside class="hidden md:flex flex-col h-full w-60 bg-white">
+        <section
+          id="aside-title"
+          class="h-14 flex flex-col justify-center items-center px-8 py-2.5 border-b-2 border-b-neutral-300"
+        >
+          <h1
+            id="logo"
+            class="text-2xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+          >
+            NutriFit
+            <span
+              ><i class="fa-solid fa-heart text-xl md:text-2xl lg:text-xl"></i
+            ></span>
+          </h1>
+          <h2
+            class="bg-clip-text bg-linear-to-r from-violet-700 to-gray-400 text-transparent text-sm font-medium"
+          >
+            Plataforma
+          </h2>
+        </section>
+
+        <section id="aside-menu" class="flex-1 overflow-y-auto">
+          <ul class="custom-list lista-com-hover list-none">
+            <li>
+              <i class="fa-solid fa-home text-violet-700"></i>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-user text-violet-700"></i>
+              <a href="perfil.html">Perfil</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-utensils text-violet-700"></i>
+              <a href="#">Dicas Nutricionais</a>
+            </li>
+            <!-- Em desenvolvimento-->
+            <li>
+              <i class="fa-solid fa-calculator text-violet-700"></i>
+              <a href="imc.html">Calculadora IMC</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-gamepad text-violet-700"></i>
+              <a href="lembreiDoPrato.html">Lembrei do Prato!</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Suporte (fixo no rodapé) -->
+        <section>
+          <ul class="list-none">
+            <li
+              class="w-full cursor-pointer py-3 px-4 flex gap-2 flex-row items-center bg-neutral-800 duration-300 transition-all hover:bg-[#6e8efb]"
+            >
+              <i
+                class="fa-solid fa-circle-question text-xl text-violet-700"
+              ></i>
+              <a class="text-white font-medium" href="suporteNutri.html">Suporte NutriFit</a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+        <!-- MENU MOBILE - aparece apenas em telas SM -->
+<nav class="fixed bottom-0 left-0 w-full bg-white shadow-xl border-t border-gray-200
+            flex justify-around py-2 sm:flex md:hidden lg:hidden z-50">
+
+  <a href="dashboard.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-home text-xl"></i>
+    <span class="text-xs font-medium">Home</span>
+  </a>
+
+  <a href="perfil.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-user text-xl"></i>
+    <span class="text-xs font-medium">Perfil</span>
+  </a>
+
+  <a href="dicasNutri.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-utensils text-xl"></i>
+    <span class="text-xs font-medium">Dicas</span>
+  </a>
+
+  <a href="imc.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-calculator text-xl"></i>
+    <span class="text-xs font-medium">IMC</span>
+  </a>
+
+  <a href="lembreiDoPrato.html" class="flex flex-col items-center text-gray-700 hover:text-violet-700 transition">
+    <i class="fa-solid fa-gamepad text-xl"></i>
+    <span class="text-xs font-medium">Prato</span>
+  </a>
+
+</nav>
+
+      <main class="block h-full w-full md:w-[calc(100%-15rem)] bg-neutral-50">
+        <header
+          class="w-full flex flex-row items-center justify-between h-14 bg-white px-8 border-b-2 border-b-neutral-300 border-l-2 border-l-neutral-300"
+        >
+          <section class="flex items-center justify-center gap-1">
+            <a
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600"
+              href="#"
+              ><i class="fa-solid fa-utensils text-[16px] text-violet-700"></i>
+              Dicas Nutricionais</a
+            >
+          </section>
+
+          <section class="flex items-center justify-center gap-4">
+            <a
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600 bg-violet-300 py-2 px-4 rounded-md"
+              href="#"
+              ><i class="fa-solid fa-user text-[16px] text-violet-700"></i
+              ><span id="perfilNome"></span
+            ></a>
+
+            <a
+              id="btn-sair"
+              class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600"
+              href="#"
+              ><i
+                class="fa-solid fa-right-from-bracket text-[16px] text-violet-700"
+              ></i
+              >Sair</a
+            >
+          </section>
+        </header>
+
+        <!-- ***Customizar Scroll***-->
+
+        <section
+          id="main-content"
+          class="w-full h-[calc(100%-3.5rem)] overflow-y-auto p-8"
+        >
+          <section
+            id="painel-main"
+            class="flex flex-row items-center justify-between">
+
+            <div class="w-full h-full p-8 bg-gray-50">
+
+  <!-- Título -->
+  <h1 class="text-3xl font-bold text-purple-700 mb-3">
+    Dicas Nutricionais 🍎
+  </h1>
+
+  <p class="text-gray-600 mb-10 max-w-2xl">
+    Explore recomendações práticas de alimentação saudável baseadas em evidências nutricionais.
+    Utilize os filtros abaixo para visualizar dicas específicas.
+  </p>
+
+  <!-- FILTRO DE CATEGORIAS -->
+  <div class="flex flex-wrap gap-3 mb-8">
+
+    <!-- botão selecionado por padrão -->
+    <button onclick="filtrarDicas('todos')" 
+      class="filtro-btn px-5 py-2 rounded-full bg-purple-600 text-white font-medium shadow transition">
+      Todos
+    </button>
+
+    <button onclick="filtrarDicas('frutas')" 
+      class="filtro-btn px-5 py-2 rounded-full bg-white border border-purple-300 text-purple-700 font-medium hover:bg-purple-100 transition">
+      Frutas
+    </button>
+
+    <button onclick="filtrarDicas('verduras')" 
+      class="filtro-btn px-5 py-2 rounded-full bg-white border border-purple-300 text-purple-700 font-medium hover:bg-purple-100 transition">
+      Verduras
+    </button>
+
+    <button onclick="filtrarDicas('proteinas')" 
+      class="filtro-btn px-5 py-2 rounded-full bg-white border border-purple-300 text-purple-700 font-medium hover:bg-purple-100 transition">
+      Proteínas
+    </button>
+
+    <button onclick="filtrarDicas('carboidratos')" 
+      class="filtro-btn px-5 py-2 rounded-full bg-white border border-purple-300 text-purple-700 font-medium hover:bg-purple-100 transition">
+      Carboidratos
+    </button>
+
+  </div>
+
+  <!-- GRID DOS CARDS COM MUITO MAIS ITENS -->
+<div id="dicasContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- ======== CARD 1 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="verduras frutas geral">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Prato Colorido</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Comer alimentos variados e coloridos garante diferentes vitaminas e minerais, essenciais para o equilíbrio diário.
+    </p>
+  </div>
+
+  <!-- ======== CARD 2 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="hidratação geral">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Hidratação</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Beber água regularmente melhora a digestão, humor e disposição ao longo do dia.
+    </p>
+  </div>
+
+  <!-- ======== CARD 3 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="proteinas frutas">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Lanches Inteligentes</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Lanches naturais como frutas e iogurtes são melhores opções do que produtos ultraprocessados.
+    </p>
+  </div>
+
+  <!-- ======== CARD 4 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="frutas">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/415/415732.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Consuma Frutas Diariamente</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Frutas são ricas em vitaminas, fibras e antioxidantes que fortalecem o sistema imunológico.
+    </p>
+  </div>
+
+  <!-- ======== CARD 5 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="verduras carboidratos">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/7663/7663453.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Verduras na Rotina</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Vegetais verdes ajudam no funcionamento do intestino e fornecem ferro e cálcio.
+    </p>
+  </div>
+
+  <!-- ======== CARD 6 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="proteinas">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046751.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Proteínas Essenciais</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Consuma fontes como ovos, frango, feijão e grão-de-bico para auxiliar na construção muscular.
+    </p>
+  </div>
+
+  <!-- ======== CARD 7 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="carboidratos">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/9382/9382124.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Carboidratos Bons</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Prefira carboidratos complexos como arroz integral, aveia e batata-doce.
+    </p>
+  </div>
+
+  <!-- ======== CARD 8 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="geral frutas">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/7663/7663484.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Fibra Alimentar</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Fibras ajudam a regular o intestino e aumentam a saciedade.
+    </p>
+  </div>
+
+  <!-- ======== CARD 9 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="geral hidratacao">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3004/3004958.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Evite Refrigerantes</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Bebidas açucaradas aumentam o risco de doenças e prejudicam o metabolismo.
+    </p>
+  </div>
+
+  <!-- ======== CARD 10 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="proteinas">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/6493/6493338.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Peixes na Semana</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Peixes ricos em ômega-3 ajudam na saúde do coração e da memória.
+    </p>
+  </div>
+
+  <!-- ======== CARD 11 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="frutas verduras">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/415/415743.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Vitamina C</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Acerola, laranja e limão fortalecem o sistema imunológico e previnem doenças.
+    </p>
+  </div>
+
+  <!-- ======== CARD 12 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="carboidratos">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046786.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Energia Sustentada</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Carboidratos complexos liberam energia de forma gradual, evitando picos de fome.
+    </p>
+  </div>
+
+  <!-- ======== CARD 13 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="geral">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3715/3715325.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Reduza Ultraprocessados</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Preferir alimentos naturais ajuda a evitar problemas de saúde e melhora o bem-estar.
+    </p>
+  </div>
+
+  <!-- ======== CARD 14 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="verduras">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/7663/7663457.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Saladas Variadas</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Misture folhas, legumes e hortaliças para aumentar o consumo de nutrientes.
+    </p>
+  </div>
+
+  <!-- ======== CARD 15 ======== -->
+  <div class="card-dica bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:shadow-lg transition"
+    data-categoria="proteinas geral">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/7663/7663367.png" class="w-7">
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">Consuma Leguminosas</h3>
+    </div>
+    <p class="text-gray-600 text-sm">
+      Feijão, lentilha e ervilha são ótimas fontes de proteínas e fibras com baixo custo.
+    </p>
+  </div>
+
+</div>
+
+          </section>
+        </section>
+      </main>
+
+      <footer class="hidden md:block absolute bottom-0 w-full py-4 bg-zinc-600">
+        <div class="flex items-center justify-center">
+          <p class="text-sm font-medium text-gray-300">
+        © 2025 Ryan Athaide • NutriFit 💜
+      </p>
+        </div>
+      </footer>
+    </section>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/pages/dashboard.js"></script>
+  </body>
+
+  <!-- SCRIPT DO FILTRO FUNCIONAL -->
+<script>
+  function filtrarDicas(categoria) {
+    const cards = document.querySelectorAll(".card-dica");
+    const botoes = document.querySelectorAll(".filtro-btn");
+
+    // Reseta estilo dos botões
+    botoes.forEach(btn => {
+      btn.classList.remove("bg-purple-600", "text-white");
+      btn.classList.add("bg-white", "text-purple-700");
+    });
+
+    // Marca o botão selecionado
+    event.target.classList.add("bg-purple-600", "text-white");
+    event.target.classList.remove("bg-white", "text-purple-700");
+
+    cards.forEach(card => {
+      const categorias = card.dataset.categoria.split(" ");
+
+      if (categoria === "todos" || categorias.includes(categoria)) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  }
+</script>
+</html>
