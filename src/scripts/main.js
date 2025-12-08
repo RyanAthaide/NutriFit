@@ -1,4 +1,4 @@
-
+import "src/style.css"
 // Importa as funções de login do Google e GitHub
 import { googleLogin } from "./auth/googleAuth";
 import { githubLogin } from "./auth/githubAuth";
