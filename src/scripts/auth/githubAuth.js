@@ -22,7 +22,7 @@ export async function githubLogin() {
 
     if (user) {
      await saveUser(user); // ⚠️ aguarde salvar antes de redirecionar!
-    window.location.href = "/public/pages/dashboard.html";
+    window.location.href = "/Pages/dashboard.html";
     }
   } catch (error) {
     if (error.code === "auth/account-exists-with-different-credential") {

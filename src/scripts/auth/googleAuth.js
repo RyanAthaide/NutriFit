@@ -20,7 +20,7 @@ export async function googleLogin() {
     if (user) {
       await saveUser(user); // ⚠️ aguarde salvar antes de redirecionar!
       console.log("Usuário logado:", user);
-      window.location.href = "/public/pages/dashboard.html";
+      window.location.href = "/Pages/dashboard.html";
     }
   } catch (error) {
     console.error("Erro ao fazer login:", error.code, error.message);
