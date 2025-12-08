@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const btnCadastro = document.getElementById("btn-cadastro");
 if (btnCadastro) {
     btnCadastro.addEventListener('click', function () {
-        window.location.href = "/Pages/cadastroForm.html";
+        window.location.href = "/pages/cadastroForm.html";
     });
 }
 
@@ -36,7 +36,7 @@ if (btnCadastro) {
 const inscrever = document.getElementById("inscricao");
 if (inscrever) {
     inscrever.addEventListener('click', function () {
-        window.location.href = "/Pages/inscrever.html";
+        window.location.href = "/pages/inscrever.html";
     });
 }
 
