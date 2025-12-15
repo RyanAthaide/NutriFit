@@ -18,9 +18,10 @@
       rel="stylesheet"
     />
 
-    <link href="/src/styles.css" rel="stylesheet" />
+    <link href="/src/styles.css" rel="stylesheet">
+
   </head>
-  <body data-page="dashboard" class="m-0 p-0 box-border">
+  <body data-page="perfil" class="m-0 p-0 box-border">
     <section class="h-dvh flex flex-row w-full">
       <aside class="hidden md:flex flex-col h-full w-60 bg-white">
         <section
@@ -29,7 +30,7 @@
         >
           <h1
             id="logo"
-            class="text-xl md:text-2xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
+            class="text-2xl bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent font-extrabold"
           >
             NutriFit
             <span
@@ -47,11 +48,11 @@
           <ul class="custom-list lista-com-hover list-none">
             <li>
               <i class="fa-solid fa-home text-violet-700"></i>
-              <a href="#">Dashboard</a>
+              <a href="dashboard.html">Dashboard</a>
             </li>
             <li>
               <i class="fa-solid fa-user text-violet-700"></i>
-              <a href=" perfil.html">Perfil</a>
+              <a href="perfil.html">Perfil</a>
             </li>
             <li>
               <i class="fa-solid fa-utensils text-violet-700"></i>
@@ -70,7 +71,7 @@
         </section>
       </aside>
 
-      <!-- MENU MOBILE - aparece apenas em telas SM -->
+            <!-- MENU MOBILE - aparece apenas em telas SM -->
 <nav class="fixed bottom-0 left-0 w-full bg-white shadow-xl border-t border-gray-200
             flex justify-around py-2 sm:flex md:hidden lg:hidden z-50">
 
@@ -110,8 +111,8 @@
             <a
               class="flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600"
               href="#"
-              ><i class="fa-solid fa-home text-[16px] text-violet-700"></i>
-              Dashboard</a
+              ><i class="fa-solid fa-user text-[16px] text-violet-700"></i>
+              Perfil</a
             >
           </section>
 
@@ -146,85 +147,99 @@
             class="flex flex-row items-center justify-between"
           >
             <div class="w-full h-full p-8">
-              <h1 class="text-3xl lg:text-4xl font-bold text-violet-700 mb-6">
-                Bem-vindo ao <span class="font-extrabold bg-clip-text bg-linear-to-r from-orange-600 to-violet-700 text-transparent">NutriFit!</span> 💜
+              <h1 class="text-3xl font-bold text-purple-700 mb-6">
+                Meu Perfil 👤💜
               </h1>
 
-              <!-- GRID DOS CARDS -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- CARD 1 - Registrar Meu Prato -->
-                <div
-                  onclick="goTo('lembreiDoPrato.html')"
-                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
-                >
-                  <div class="text-4xl mb-3">🍽️</div>
+              <div
+                class="max-w-3xl bg-white shadow-lg rounded-2xl border border-purple-200 p-8"
+              >
+                <!-- FOTO + NOME -->
+                <div class="flex flex-col items-center">
+                  <img
+                    id="profile-photo"
+                    class="w-28 h-28 rounded-full shadow-md object-cover border-4 border-purple-200"
+                    src=""
+                    alt="Foto do Usuário"
+                  />
 
-                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
-                    Registrar Meu Prato
-                  </h2>
-
-                  <p class="text-gray-500 text-sm">
-                    Selecione os alimentos consumidos e registre como se sentiu
-                    após a refeição.
-                  </p>
+                  <h2 id="profile-name" class="text-xl font-semibold mt-3"></h2>
+                  <p id="profile-email" class="text-gray-500 text-sm"></p>
                 </div>
 
-                <!-- CARD 2 - Dicas Nutritivas -->
-                <div
-                  onclick="goTo('dicasNutri.html')"
-                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
-                >
-                  <div class="text-4xl mb-3">🍎</div>
+                <!-- FORMULÁRIO -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                  <div>
+                    <label class="block mb-1 font-medium text-gray-700"
+                      >Idade</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Ex: 12"
+                      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-400 outline-none"
+                    />
+                  </div>
 
-                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
-                    Dicas Nutricionais
-                  </h2>
+                  <div>
+                    <label class="block mb-1 font-medium text-gray-700"
+                      >Peso (kg)</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Ex: 45"
+                      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-400 outline-none"
+                    />
+                  </div>
 
-                  <p class="text-gray-500 text-sm">
-                    Aprenda hábitos saudáveis, sugestões de refeições e boas
-                    práticas para o dia a dia.
-                  </p>
+                  <div>
+                    <label class="block mb-1 font-medium text-gray-700"
+                      >Altura (cm)</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Ex: 150"
+                      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-400 outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="block mb-1 font-medium text-gray-700"
+                      >Gênero</label
+                    >
+                    <select
+                      class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-400 outline-none"
+                    >
+                      <option>Selecione</option>
+                      <option>Masculino</option>
+                      <option>Feminino</option>
+                      <option>Prefiro não informar</option>
+                    </select>
+                  </div>
                 </div>
 
-                <!-- CARD 3 - Meu Perfil -->
-                <div
-                  onclick="goTo('perfil.html')"
-                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
-                >
-                  <div class="text-4xl mb-3">👤</div>
-
-                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
-                    Meu Perfil
-                  </h2>
-
-                  <p class="text-gray-500 text-sm">
-                    Consulte seus dados, idade, peso, altura e informações
-                    cadastradas.
-                  </p>
+                <!-- SOBRE MIM -->
+                <div class="mt-6">
+                  <label class="block mb-1 font-medium text-gray-700"
+                    >Sobre mim</label
+                  >
+                  <textarea
+                    placeholder="Conte um pouco sobre você..."
+                    class="w-full h-28 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-400 outline-none"
+                  ></textarea>
                 </div>
 
-                <!-- CARD 4 - Calculadora IMC -->
-                <div
-                  onclick="goTo('imc.html')"
-                  class="cursor-pointer bg-white shadow-md rounded-xl p-6 border border-violet-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                <!-- BOTÃO SALVAR -->
+                <button
+                  class="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold p-3 rounded-xl shadow-md transition-all"
                 >
-                  <div class="text-4xl mb-3">⚖️</div>
-
-                  <h2 class="text-xl font-semibold text-gray-800 mb-2">
-                    Calculadora IMC
-                  </h2>
-
-                  <p class="text-gray-500 text-sm">
-                    Descubra sua classificação corporal e receba orientações
-                    personalizadas.
-                  </p>
-                </div>
+                  Salvar Informações 💾
+                </button>
               </div>
             </div>
           </section>
         </section>
       </main>
-      <footer class="hidden md:block absolute bottom-0 w-full py-4 bg-zinc-600">
+       <footer class="hidden md:block absolute bottom-0 w-full py-4 bg-zinc-600">
         <div class="flex items-center justify-center">
           <p class="text-sm font-medium text-gray-300">
         © 2025 Ryan Athaide • NutriFit 💜
@@ -233,13 +248,6 @@
       </footer>
     </section>
 
-
     <script type="module" src="/src/scripts/main.js"></script>
-    <script type="module" src="/src/scripts/pages/dashboard.js"></script>
   </body>
-  <script>
-    function goTo(page) {
-      window.location.href = page;
-    }
-  </script>
 </html>
