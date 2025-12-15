@@ -1,4 +1,5 @@
 <h1 align="center">🍏 Nutri-Fut</h1>
+<h3 align="center">07-Dez-2025</h3>
 
 <p align="center">
   Uma plataforma para cuidar da sua saúde, alimentação e bem-estar.
@@ -145,10 +146,17 @@ A criança seleciona o alimento pela imagem e registra como se sentiu.
 </p>
 
 <p align="center">
+Link Reposiório GitHub: 
+<a>https://github.com/RyanAthaide/NutriFit</a>
+</p>
+
+<p align="center">
   <strong>Ryan Athaide da Silva</strong><br/>
   Estudante de Bacharelado em Engenharia de Software.<br/>
   Apaixonado por desenvolvimento web, IA e automação.
 </p>
+
+<h5 align="center">07-Dez-2025</h5>
 
 ---
 

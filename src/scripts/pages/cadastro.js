@@ -32,10 +32,10 @@ function checkIn() {
 
   }
 
-  checkIn();
+checkIn();
   
   // Botão "Entrar"
-  const btnEntrar = document.getElementById("btn-cadastrarse");
+  const btnEntrar = document.getElementById("btn-entrar");
   btnEntrar.addEventListener('click', function () {
     window.location.href = "index.html";
   });

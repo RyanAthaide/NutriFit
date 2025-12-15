@@ -1,16 +1,22 @@
-import "/src/services/firebase.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const auth = getAuth();
 
+const imgPerfil = document.getElementById("profile-photo");
+const nomeEl = document.getElementById("profile-name");
+const emailEl = document.getElementById("profile-email");
+
 onAuthStateChanged(auth, (user) => {
   if (!user) return;
 
-  document.getElementById("profile-name").textContent =
-    user.displayName || "Usuário";
+  // Nome e email (sempre existem)
+  nomeEl.textContent = user.displayName || "Usuário NutriFit";
+  emailEl.textContent = user.email;
 
-  document.getElementById("profile-email").textContent = user.email;
-
-  document.getElementById("profile-photo").src =
-    user.photoURL || "https://cdn-icons-png.flaticon.com/128/149/149071.png";
+  // Foto (tratamento correto)
+  if (user.photoURL) {
+    imgPerfil.src = user.photoURL;
+  } else {
+    imgPerfil.src = "https://cdn-icons-png.flaticon.com/128/149/149071.png";
+  }
 });
