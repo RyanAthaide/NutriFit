@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       await signInWithEmailAndPassword(auth, email, senha);
 
       // login ok → vai pro dashboard
-      window.location.href = "/pages/dashboard.html";
+      window.location.href = "dashboard.html";
 
     } catch (error) {
       console.error("Erro ao fazer login:", error);

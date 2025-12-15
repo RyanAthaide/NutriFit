@@ -4,7 +4,6 @@ import { googleLogin } from "./auth/googleAuth";
 import { githubLogin } from "./auth/githubAuth";
 
 // src/scripts/main.js
-import "../styles.css";
 
 const page = document.body.dataset.page;
 
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const btnCadastro = document.getElementById("btn-cadastro");
 if (btnCadastro) {
     btnCadastro.addEventListener('click', function () {
-        window.location.href = "/pages/cadastroForm.html";
+        window.location.href = "cadastroForm.html";
     });
 }
 
@@ -58,7 +57,7 @@ if (btnCadastro) {
 const inscrever = document.getElementById("inscricao");
 if (inscrever) {
     inscrever.addEventListener('click', function () {
-        window.location.href = "/pages/inscrever.html";
+        window.location.href = "inscrever.html";
     });
 }
 
