@@ -20,7 +20,7 @@
 
     <link href="/src/styles.css" rel="stylesheet" />
   </head>
-  <body class="m-0 p-0 box-border">
+  <body data-page="dicas" class="m-0 p-0 box-border">
     <section class="h-dvh flex flex-row w-full">
       <aside class="hidden md:flex flex-col h-full w-60 bg-white">
         <section
@@ -417,33 +417,6 @@
 
     <script type="module" src="/src/scripts/main.js"></script>
     <script type="module" src="/src/scripts/pages/dashboard.js"></script>
+    <script type="module" src="/src/scripts/pages/dicas.js"></script>
   </body>
-
-  <!-- SCRIPT DO FILTRO FUNCIONAL -->
-<script>
-  function filtrarDicas(categoria) {
-    const cards = document.querySelectorAll(".card-dica");
-    const botoes = document.querySelectorAll(".filtro-btn");
-
-    // Reseta estilo dos botões
-    botoes.forEach(btn => {
-      btn.classList.remove("bg-purple-600", "text-white");
-      btn.classList.add("bg-white", "text-purple-700");
-    });
-
-    // Marca o botão selecionado
-    event.target.classList.add("bg-purple-600", "text-white");
-    event.target.classList.remove("bg-white", "text-purple-700");
-
-    cards.forEach(card => {
-      const categorias = card.dataset.categoria.split(" ");
-
-      if (categoria === "todos" || categorias.includes(categoria)) {
-        card.classList.remove("hidden");
-      } else {
-        card.classList.add("hidden");
-      }
-    });
-  }
-</script>
 </html>
