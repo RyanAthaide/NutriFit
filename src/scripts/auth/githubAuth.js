@@ -6,8 +6,8 @@ import {
   signInWithCredential,
   linkWithCredential
 } from "firebase/auth";
-import { auth } from "../../services/firebase.js";
-import { saveUser } from "./saveUser.js";
+import { auth } from "/src/services/firebase.js";
+import { saveUser } from "/src/scripts/auth/saveUser.js";
 
 const provider = new GithubAuthProvider();
 
@@ -22,7 +22,7 @@ export async function githubLogin() {
 
     if (user) {
      await saveUser(user); // ⚠️ aguarde salvar antes de redirecionar!
-    window.location.href = "/pages/dashboard.html";
+    window.location.href = "dashboard.html";
     }
   } catch (error) {
     if (error.code === "auth/account-exists-with-different-credential") {

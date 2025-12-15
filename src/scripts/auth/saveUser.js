@@ -1,6 +1,6 @@
 // saveUser.js
 
-import { db } from "../../services/firebase.js";
+import { db } from "/src/services/firebase.js";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 /**
