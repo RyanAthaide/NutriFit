@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../../services/firebase.js";
+import { auth } from "/src/services/firebase.js";
 
 const formCadastro = document.getElementById("form-cadastro");
 

@@ -1,6 +1,6 @@
 // src/scripts/pages/inscricao.js
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/firebase.js";
+import { auth } from "/src/services/firebase.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-inscricao");
